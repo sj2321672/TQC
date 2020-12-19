@@ -1,0 +1,45 @@
+import java.io.IOException;
+import java.util.*;
+class JPD02 {
+    static Scanner keyboard = new Scanner(System.in);
+    public static void main(String[] args) {
+    	try {
+    		test();
+    		test();
+    		test();
+    		test();
+    		test();
+    	}
+    	catch (IOException e)
+    	{
+    		
+    	}
+        
+    }
+  
+    public static void test() throws IOException {
+    	System.out.println("Input:");
+        double grade = keyboard.nextDouble();
+        if (grade >= 90)
+        {
+        	System.out.println("Your grade is A");
+        }
+        else if(grade >= 80)
+        {
+        	System.out.println("Your grade is B");
+        }
+        else if(grade >= 70)
+        {
+        	System.out.println("Your grade is C");
+        }
+        else if(grade >= 60)
+        {
+        	System.out.println("Your grade is D");
+        }
+        else
+        {
+        	System.out.println("Your grade is F");
+        }
+        throw new IOException();
+    }
+}
