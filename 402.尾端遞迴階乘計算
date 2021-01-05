@@ -1,45 +1,44 @@
 import java.util.Scanner;
-
-public class JPA04 {
-	static Scanner keyboard = new Scanner(System.in);
-	public static void main(String args[]) {
-		long num;
-		do
-		{
-			System.out.print("Input n(0<=n<=16):");
-			num = keyboard.nextInt();
-		}
-		while(num <= 0 && num !=999 || num >= 16 && num != 999);
-		while(num != 999)
-		{
-			System.out.println(num + " 的階乘(尾端遞迴) = " + Tail(num,1));
-			System.out.println(num + " 的階乘(迴圈) = " + Loop(num));
+public class JPD04 {
+    static Scanner keyboard = new Scanner(System.in);
+    public static void main(String args[]) {
+    	int n;
+    	do
+    	{
+    		System.out.print("Input n (0<=n<=16):");
+    		n = keyboard.nextInt();
+    	}
+    	while(n <= 0 && n !=999 || n >= 16 && n != 999);
+    	while(n != 999)
+    	{
+    		System.out.println(n + " 的階乘(尾端遞迴) = " + rec(n));
+			System.out.println(n + " 的階乘(迴圈) = " + loop(n));
 			do
 			{
-				System.out.print("Input n(0<=n<=16):");
-				num = keyboard.nextInt();
+				System.out.print("Input n (0<=n<=16):");
+	    		n = keyboard.nextInt();
 			}
-			while(num <= 0 && num !=999 || num >= 16 && num != 999);
-		}
-	}
-	public static long Loop(long a)
-	{
-		long sum = 1;
-		for(long i=1;i<=a;i++)
-		{
-			sum = (sum * i);
-		}
-		return sum;
-	}
-	public static long Tail(long a,long b)
-	{
-		if (a == 1)
-		{
-			return b;
-		}
-		else
-		{
-			return Tail(a-1,a*b);
-		}
-	}
+			while(n <= 0 && n !=999 || n >= 16 && n != 999);
+    	}
+    }
+    public static int loop(int a)
+    {
+    	int sum = 1;
+    	for(int i=1;i<=a;i++)
+    	{
+    		sum = sum * i;
+    	}
+    	return sum;
+    }
+    public static int rec(int b)
+    {
+    	if (b == 1)
+    	{
+    		return 1;
+    	}
+    	else
+    	{
+    		return b * rec(b - 1);
+    	}
+    }
 }
