@@ -1,0 +1,21 @@
+public class JPD05 {
+	public static void main(String[] argv) {
+		int[] data = { 2, 4, 3, 5, 7, 6, 9, 1 }; // 為排序的資料
+		int Ln = data.length - 1;
+		for (int i = 0; i < Ln; i++) {
+			for (int j = 0; j < Ln; j++) {
+				if (data[j] > data[j + 1]) {
+					int temp = data[j + 1];
+					data[j + 1] = data[j];
+					data[j] = temp;
+				}
+			}
+
+			for (int k = 0; k <= Ln; k++) 
+			{
+				System.out.print(data[k] + " ");			
+			}	
+			System.out.println("");
+		}
+	}
+}
